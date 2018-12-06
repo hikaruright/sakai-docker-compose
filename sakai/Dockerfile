@@ -50,6 +50,7 @@ RUN mv mysql-connector-java-5.1.47/mysql-connector-java-5.1.47-bin.jar /tomcat/c
 #install sakai
 RUN git clone https://github.com/sakaiproject/sakai.git /sakai
 WORKDIR /sakai
+RUN git checkout -b 11.2
 RUN mvn clean install sakai:deploy -Dmaven.tomcat.home=/tomcat -Dmaven.test.skip=true
 
 
