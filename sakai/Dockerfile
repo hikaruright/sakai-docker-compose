@@ -4,6 +4,10 @@ FROM library/ubuntu:16.04
 RUN apt-get -y update
 RUN apt-get install -y software-properties-common
 
+#set language to japanese
+RUN apt-get install -y language-pack-ja-base language-pack-ja
+ENV LANG=ja_JP.UTF-8
+
 #install oracle java 8
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
